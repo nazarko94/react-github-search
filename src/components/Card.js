@@ -1,18 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Card = () => {
-  return (
-    <div>
-      <div className='card'>
-        <img src={''} alt={''} className='card-img-top'/>
-        <div className='card-body'>
-          <h5 className='card-title'>React JS</h5>
-          <Link to={'/profile/' + 'react'} className='btn btn-success'>Open</Link>
-        </div>
+const Card = () => (
+    <div className="card">
+      <img src={''} alt={''} className="card-img-top"/>
+      <div className="card-body">
+        <h5 className="card-title">React JS</h5>
+        <Link to={'/profile/'} className="btn btn-success">Open</Link>
       </div>
     </div>
   );
-};
-
 export default Card;

@@ -1,22 +1,27 @@
 import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { Alert } from "./components/Alert";
 import { Navbar } from "./components/Navbar";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Profile } from "./pages/Profile";
+import { AlertState } from "./context/alert/AlertState";
+import {About} from "./pages/About";
+import {Home} from './pages/Home';
+import {Profile} from "./pages/Profile";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <div className="container pt-4">
-        <Routes>
-          <Route path="/" exact element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/profile/:name" element={<Profile/>}/>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <AlertState>
+      <BrowserRouter>
+        <Navbar/>
+        <div className="container pt-4">
+          <Alert alert={{text: 'Test alert'}}/>
+          <Routes>
+            <Route path="/" exact element={<Home/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/profile/:name" element={<Profile/>}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </AlertState>
   );
 }
 

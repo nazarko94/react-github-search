@@ -1,17 +1,25 @@
-import React, { Fragment } from 'react';
+import React, {useContext} from 'react'
+import { AlertContext } from '../context/alert/alertContext'
 
-function Search() {
+const Search = () => {
+  const {show} = useContext(AlertContext);
+
+  const onSubmit = event => {
+    if(event.key === 'Enter') {
+      show('This is alert!')
+    }
+  }
+
   return (
-    <Fragment>
-      <div className='form-group'>
-        <input
-          type='text'
-          className='form-control'
-          placeholder='Enter username'
-        />
-      </div>
-    </Fragment>
-  );
-};
+    <div className='form-group'>
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Enter username..."
+        onKeyPress={onSubmit}
+      />
+    </div>
+  )
+}
 
 export default Search;
