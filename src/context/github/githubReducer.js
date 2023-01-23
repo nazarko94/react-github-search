@@ -1,4 +1,3 @@
-import React from "react";
 import { CLEAR_USERS, GET_REPOS, GET_USER, SEARCH_USERS, SET_LOADING } from "../types";
 
 const handlers = {

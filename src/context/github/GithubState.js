@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 import { useReducer } from "react";
 import { CLEAR_USERS, GET_REPOS, GET_USER, SEARCH_USERS, SET_LOADING } from "../types";
@@ -73,5 +74,5 @@ export const GithubState = ({children}) => {
     }}>
       {children}
     </GithubContext.Provider>
-  );
+  )
 };

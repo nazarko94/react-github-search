@@ -10,7 +10,7 @@ export const Navbar = () => {
       
       <ul className='navbar-nav'>
         <li className='nav-item'>
-          <NavLink to='/' className='nav-link'>
+          <NavLink exact to='/' className='nav-link'>
             Main
           </NavLink>
         </li>
